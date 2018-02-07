@@ -1,4 +1,5 @@
 require('pg')
+require("pry")
 
 require_relative('../db/sql_runner.rb')
 
@@ -42,5 +43,13 @@ class Album
     sql = "DELETE FROM albums WHERE name = $1"
     values = [@name]
     SqlRunner.run(sql, values)
+  end
+
+  def self.find(id)
+    sql = "SELECT * FROM albums where id = $1"
+    values = [id]
+    results = SqlRunner.run(sql, values)
+    we_found = Album.new(results[0])
+    return we_found
   end
 end

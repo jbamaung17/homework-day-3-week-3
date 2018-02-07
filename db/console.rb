@@ -36,6 +36,5 @@ album1.save
 album2.save
 album3.save
 album4.save
-
 binding.pry
 nil
