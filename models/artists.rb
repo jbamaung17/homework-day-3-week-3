@@ -3,7 +3,7 @@ require('pg')
 require_relative('../db/sql_runner')
 require_relative('./albums.rb')
 
-class Artist.new
+class Artist
 
   attr_reader :id, :name
 
